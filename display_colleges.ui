@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>display_colleges</class>
+ <widget class="QDialog" name="display_colleges">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>794</width>
+    <height>662</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>30</y>
+     <width>631</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Black</family>
+     <pointsize>22</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>College Tour Colleges and Their Distances From Saddleback </string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>210</y>
+     <width>631</width>
+     <height>411</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
