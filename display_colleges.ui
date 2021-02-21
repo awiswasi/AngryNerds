@@ -46,14 +46,32 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>210</y>
-     <width>631</width>
-     <height>411</height>
+     <x>150</x>
+     <y>180</y>
+     <width>441</width>
+     <height>381</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>590</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Display Colleges</string>
    </property>
   </widget>
  </widget>
