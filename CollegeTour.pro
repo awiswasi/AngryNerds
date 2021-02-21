@@ -15,7 +15,8 @@ SOURCES += \
     edit_universities.cpp \
     login_screen.cpp \
     main.cpp \
-    college_tour.cpp
+    college_tour.cpp \
+    trip_planner.cpp
 
 HEADERS += \
     admin_window.h \
@@ -23,7 +24,8 @@ HEADERS += \
     display_colleges.h \
     edit_souvenirs.h \
     edit_universities.h \
-    login_screen.h
+    login_screen.h \
+    trip_planner.h
 
 FORMS += \
     admin_window.ui \
@@ -31,7 +33,8 @@ FORMS += \
     display_colleges.ui \
     edit_souvenirs.ui \
     edit_universities.ui \
-    login_screen.ui
+    login_screen.ui \
+    trip_planner.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
