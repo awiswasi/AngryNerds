@@ -8,17 +8,7 @@ CollegeTour::CollegeTour(QWidget *parent)
     ui(new Ui::CollegeTour)
 {
     ui->setupUi(this);
-    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/sqlite3/campuses.db");
 
-    if(!mydb.open())
-    {
-        ui->label->setText("stupidA$$ hoez");
-    }
-    else
-    {
-        ui->label->setText("you in dogg");
-    }
 }
 
 CollegeTour::~CollegeTour()
