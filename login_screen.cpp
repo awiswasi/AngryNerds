@@ -3,8 +3,6 @@
 #include <QMessageBox>
 #include "admin_window.h"
 
-
-
 login_screen::login_screen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::login_screen)
