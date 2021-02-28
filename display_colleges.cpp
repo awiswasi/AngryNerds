@@ -10,7 +10,7 @@ display_colleges::display_colleges(QWidget *parent) :
     ui->setupUi(this);
 
     QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/sqlite3/displayCampuses.db");
+    mydb.setDatabaseName("C:/sqlite3/initCampuses.db");
 
     mydb.open();
 }
@@ -26,8 +26,7 @@ void display_colleges::on_pushButton_clicked()
     QSqlQueryModel * model=new QSqlQueryModel();
 
     QSqlQuery * qry=new QSqlQuery(obj.mydb);
-    //qry->prepare("select MIN(startingColleges) AS startingColleges, dist from initCampuses group by startingColleges");
-    qry->prepare("select campusName, distance from displayCampuses");
+    qry->prepare("select endingColleges, dist from initCampuses where startingColleges = 'Saddleback College'");
 
     qry->exec();
     model->setQuery(*qry);
