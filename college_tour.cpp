@@ -27,6 +27,13 @@ void CollegeTour::on_displayCollegeButton_clicked()
 
 }
 
+void CollegeTour::on_planYourTripButton_clicked()
+{
+    planTrip = new trip_planner(this);
+    planTrip->show();
+
+}
+
 void CollegeTour::on_pushButton_2_clicked()
 {
     loginScreen = new login_screen(this);
