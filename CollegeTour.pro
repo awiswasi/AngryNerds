@@ -9,32 +9,40 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    DBManager.cpp \
     admin_window.cpp \
+    customtrip.cpp \
     display_colleges.cpp \
     edit_souvenirs.cpp \
     edit_universities.cpp \
     login_screen.cpp \
     main.cpp \
     college_tour.cpp \
-    trip_planner.cpp
+    trip_planner.cpp \
+    trip_progress.cpp
 
 HEADERS += \
+    DBManager.h \
     admin_window.h \
     college_tour.h \
+    customtrip.h \
     display_colleges.h \
     edit_souvenirs.h \
     edit_universities.h \
     login_screen.h \
-    trip_planner.h
+    trip_planner.h \
+    trip_progress.h
 
 FORMS += \
     admin_window.ui \
     collegetour.ui \
+    customtrip.ui \
     display_colleges.ui \
     edit_souvenirs.ui \
     edit_universities.ui \
     login_screen.ui \
-    trip_planner.ui
+    trip_planner.ui \
+    trip_progress.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
