@@ -33,7 +33,7 @@ edit_universities::~edit_universities()
 //}
 
 
-
+// ADD COLLEGES
 void edit_universities::on_pushButton_edit_clicked()
 {
     edit_universities obj;
@@ -56,6 +56,7 @@ void edit_universities::on_pushButton_edit_clicked()
     }
 }
 
+// DISPLAY COLLEGES
 void edit_universities::on_displayButton_clicked()
 {
     edit_universities obj;
@@ -67,4 +68,23 @@ void edit_universities::on_displayButton_clicked()
     qry->exec();
     model->setQuery(*qry);
     ui->editTable->setModel(model);
+}
+
+void edit_universities::on_pushButton_2_clicked()
+{
+        QSqlQuery qry;
+
+        QString deleteColleges;
+        deleteColleges=ui->deleteColleges_txt->text();
+
+        qry.prepare("Delete from initCampuses where startingColleges = '"+deleteColleges+"'");
+
+        if(qry.exec())
+        {
+            QMessageBox::critical(this, tr("Delete"), tr("Deleted"));
+        }
+        else
+        {
+            //QMessageBox::critical(this, tr("error::"), qry.lastError().text());
+        }
 }
