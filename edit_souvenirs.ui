@@ -13,16 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>200</y>
-     <width>361</width>
-     <height>351</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
@@ -43,11 +33,11 @@
     <string>Delete Souvenir </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="colleges_txt">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>140</y>
+     <y>130</y>
      <width>113</width>
      <height>22</height>
     </rect>
@@ -57,7 +47,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>90</y>
+     <y>80</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -66,11 +56,11 @@
     <string>Souvenir Name: </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="deleteSouvenir_txt">
    <property name="geometry">
     <rect>
      <x>510</x>
-     <y>100</y>
+     <y>90</y>
      <width>113</width>
      <height>22</height>
     </rect>
@@ -80,7 +70,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>90</y>
+     <y>80</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -93,7 +83,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>130</y>
+     <y>120</y>
      <width>171</width>
      <height>41</height>
     </rect>
@@ -102,11 +92,11 @@
     <string>Souvenir Campus: </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="traditionalSouvenirs_txt">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>100</y>
+     <y>90</y>
      <width>113</width>
      <height>22</height>
     </rect>
@@ -116,20 +106,20 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>170</y>
+     <y>160</y>
      <width>171</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Price</string>
+    <string>Price:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="cost_txt">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>180</y>
+     <y>170</y>
      <width>113</width>
      <height>22</height>
     </rect>
@@ -139,20 +129,20 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>370</y>
+     <y>480</y>
      <width>171</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Price</string>
+    <string>Price:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>290</y>
+     <y>400</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -165,7 +155,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>330</y>
+     <y>440</y>
      <width>171</width>
      <height>41</height>
     </rect>
@@ -174,31 +164,31 @@
     <string>Souvenir Campus: </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="editColleges_txt">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>340</y>
+     <y>450</y>
      <width>113</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
+  <widget class="QLineEdit" name="editCost_txt">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>380</y>
+     <y>490</y>
      <width>113</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_7">
+  <widget class="QLineEdit" name="editSouvenirs_txt">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>300</y>
+     <y>410</y>
      <width>113</width>
      <height>22</height>
     </rect>
@@ -208,7 +198,7 @@
    <property name="geometry">
     <rect>
      <x>63</x>
-     <y>53</y>
+     <y>43</y>
      <width>191</width>
      <height>31</height>
     </rect>
@@ -242,6 +232,104 @@
    </property>
    <property name="text">
     <string>Edit Souvenir </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>220</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>520</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Update</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="displaySouvenirsButton">
+   <property name="geometry">
+    <rect>
+     <x>494</x>
+     <y>530</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Display Souvenirs</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>130</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>180</y>
+     <width>311</width>
+     <height>321</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>310</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search Souvenir:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="searchSouvenirButton">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>350</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="searchSouvenirs_txt">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>310</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
    </property>
   </widget>
  </widget>
