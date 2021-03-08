@@ -25,6 +25,8 @@ private slots:
 
     void on_displayButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::edit_universities *ui;
 };
