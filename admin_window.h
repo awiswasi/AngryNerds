@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "edit_universities.h"
+#include "edit_souvenirs.h"
 
 namespace Ui {
 class admin_window;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::admin_window *ui;
     edit_universities *editUni;
+    edit_souvenirs *editSouv;
 };
 
 #endif // ADMIN_WINDOW_H
