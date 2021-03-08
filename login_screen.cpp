@@ -20,7 +20,7 @@ void login_screen::on_pushButton_Login_clicked()
     QString userName = ui->userName->text();
     QString passWord = ui->passWord->text();
 
-    if(userName == "snoopDogg" && passWord == "D oh double G")
+    if(userName == "admin" && passWord == "password")
     {
         QMessageBox::information(this, "Login", "Username and Password is correct");
         admin = new admin_window(this);
