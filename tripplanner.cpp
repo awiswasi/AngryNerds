@@ -198,7 +198,7 @@ void tripPlanner::onPlanClick()
             }
             else if(startingCollege =="Arizona State University" && type == "auto")
             {
-                for(int index = 0; index < plannedColleges.size()-(10-(stops+1)+1); index++)
+                for(int index = 0; index < plannedColleges.size()-(12-(stops+1)+1); index++)
                 {
                     myDb.addTrip(tripID, plannedColleges[index], index, distanceTo[index]); // uploads trip to DB
                 }
