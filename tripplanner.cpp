@@ -2,12 +2,14 @@
 #include "ui_tripplanner.h"
 #include <QMessageBox>
 #include "QVBoxLayout"
+#include "adminwindow.h"
 
 tripPlanner::tripPlanner(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::tripPlanner)
 {
     ui->setupUi(this);
+
 
     initializeList();
     updateCombo();
@@ -156,6 +158,9 @@ void tripPlanner::onPlanClick()
     type = this->ui->typeName->currentText();
     tripID = this->ui->trip->text();
 
+    int stops;
+    stops= ui->spinBox->value();
+
     if(startingCollege =="University of California, Irvine (UCI)" && type =="auto")
     {
     prePlanned();
@@ -184,9 +189,27 @@ void tripPlanner::onPlanClick()
             plannedColleges.clear();
             planAlgorithm(startingCollege, distance); // will plan the trip
             distanceTo << 0; // adds 0 for distance to next college at last college
-            for(int index = 0; index < plannedColleges.size(); index++)
+            if(startingCollege =="University of California, Irvine (UCI)" && type =="auto")
+            {
+            for(int index = 0; index < plannedColleges.size()-(10-(stops+1)+1); index++)
             {
                 myDb.addTrip(tripID, plannedColleges[index], index, distanceTo[index]); // uploads trip to DB
+            }
+            }
+            else if(startingCollege =="Arizona State University" && type == "auto")
+            {
+                for(int index = 0; index < plannedColleges.size()-(10-(stops+1)+1); index++)
+                {
+                    myDb.addTrip(tripID, plannedColleges[index], index, distanceTo[index]); // uploads trip to DB
+                }
+
+            }
+            else
+            {
+                for(int index = 0; index < plannedColleges.size(); index++)
+                {
+                    myDb.addTrip(tripID, plannedColleges[index], index, distanceTo[index]); // uploads trip to DB
+                }
             }
             showTrip(tripID);
             id = tripID;
@@ -311,6 +334,7 @@ void tripPlanner::onStartClick()
         tripprogress *prog = new tripprogress(this);
 
         prog->tripID = id;
+
         qDebug() << prog->tripID;
         prog->show();
     }
@@ -337,9 +361,9 @@ void tripPlanner::prePlanned()
     int stops;
     stops= ui->spinBox->value();
 
-if(stops>12)
+if(stops>10)
 {
-     QMessageBox::information(this,"title","must not be bigger than 12");
+     QMessageBox::information(this,"title","must not be bigger than 10");
 
 }
 else
@@ -353,7 +377,7 @@ else
 
     else
     {
-        for(int i = 0; i < checkBoxVector.size()-(12-(stops+1)+1); i++)
+        for(int i = 0; i < checkBoxVector.size(); i++)
         {
             checkBoxVector[i]->setCheckState(Qt::CheckState::Checked);
 
