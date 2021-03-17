@@ -16,10 +16,10 @@
   <widget class="QScrollArea" name="CollegeList_scrollArea">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>420</x>
      <y>20</y>
      <width>311</width>
-     <height>621</height>
+     <height>611</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -31,7 +31,7 @@
       <x>0</x>
       <y>0</y>
       <width>309</width>
-      <height>619</height>
+      <height>609</height>
      </rect>
     </property>
     <widget class="QComboBox" name="comboBox">
@@ -63,7 +63,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>40</y>
+     <y>20</y>
      <width>151</width>
      <height>16</height>
     </rect>
@@ -82,7 +82,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="save">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -98,8 +98,8 @@
   <widget class="QComboBox" name="colName">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>40</y>
+     <x>170</x>
+     <y>20</y>
      <width>191</width>
      <height>22</height>
     </rect>
@@ -168,6 +168,52 @@
    </property>
    <property name="text">
     <string>Start</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="typeName">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>40</y>
+     <width>91</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>50</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>type:</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>50</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>50</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>closest:</string>
    </property>
   </widget>
  </widget>

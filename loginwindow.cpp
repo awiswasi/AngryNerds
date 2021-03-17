@@ -44,8 +44,6 @@ void LoginWindow::onPlanClick()
 }
 
 
-
-
 void LoginWindow::on_pushButton_clicked()
 {
     this->hide();

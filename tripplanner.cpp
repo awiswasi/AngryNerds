@@ -11,6 +11,8 @@ tripPlanner::tripPlanner(QWidget *parent) :
 
     initializeList();
     updateCombo();
+    this->ui->typeName->addItem("custom");
+    this->ui->typeName->addItem("auto");
 }
 
 tripPlanner::~tripPlanner()
@@ -68,7 +70,7 @@ void tripPlanner::initializeList()
             QCheckBox* checkBox = new QCheckBox(query->value(0).toString());
             checkBox->setCheckState(Qt::CheckState::Unchecked);
             checkBoxVector.push_back(checkBox);
-            connect(checkBox, &QCheckBox::stateChanged, this, &tripPlanner::ChecboxChanged);
+            connect(checkBox, &QCheckBox::stateChanged, this, &tripPlanner::CheckboxChanged);
         }
 
         for(int i = 0; i < checkBoxVector.size(); i++)
@@ -78,7 +80,7 @@ void tripPlanner::initializeList()
     }
 }
 
-void tripPlanner::ChecboxChanged()
+void tripPlanner::CheckboxChanged()
 {
 
     qDebug() << "Signal caught";
@@ -104,6 +106,7 @@ void tripPlanner::ChecboxChanged()
             qDebug() << checkBoxVector[i] << endl;
         }
     }
+
     else
     {
         for(int i = 0; i < checkBoxVector.size(); i++)
@@ -111,6 +114,7 @@ void tripPlanner::ChecboxChanged()
             checkBoxVector[i]->setDisabled(false);
         }
     }
+
 }
 
 void tripPlanner::selectedCollegeList()
@@ -130,7 +134,7 @@ void tripPlanner::selectedCollegeList()
     {
         while(query->next())
         {
-            if(checkBoxVector[i]->checkState() == Qt::CheckState::Checked)
+             if(checkBoxVector[i]->checkState() == Qt::CheckState::Checked)
             {
                 QString temp = query->value("startCollege").toString();
                 selectedColleges << temp;
@@ -146,12 +150,24 @@ void tripPlanner::selectedCollegeList()
 void tripPlanner::onPlanClick()
 {
     distance = 0;
-    QString startingCollege;
+    QString startingCollege,type;
     QString tripID;
     startingCollege = this->ui->colName->currentText();
+    type = this->ui->typeName->currentText();
     tripID = this->ui->trip->text();
 
+    if(startingCollege =="University of California, Irvine (UCI)" && type =="auto")
+    {
+    prePlanned();
+    }
+     else if(startingCollege =="Arizona State University" && type == "auto")
+    {
+    prePlanned();
+    }
+    else
+    {
     selectedCollegeList();
+    }
 
     if(!collegeDoesExist(startingCollege))
     {
@@ -283,12 +299,7 @@ void tripPlanner::showTrip(QString ID)
     ui->window->resizeColumnsToContents();
 }
 
-void tripPlanner::onDisplayClick()
-{
-    QString startingCollege;
-    startingCollege = this->ui->colName->currentText();
 
-}
 
 void tripPlanner::onStartClick()
 {
@@ -305,6 +316,8 @@ void tripPlanner::onStartClick()
     }
     else
     {
+
+
         QMessageBox::information(this,"title","Create a trip first");
     }
 
@@ -312,7 +325,56 @@ void tripPlanner::onStartClick()
 }
 
 
+void tripPlanner::prePlanned()
+{
+    selectedColleges.clear();
+    QSqlQuery *query = new QSqlQuery();
+    int i = 0;
+
+    QString startingCollege;
+    startingCollege = this->ui->colName->currentText();
+
+    int stops;
+    stops= ui->spinBox->value();
+
+if(stops>12)
+{
+     QMessageBox::information(this,"title","must not be bigger than 12");
+
+}
+else
+{
+    query->prepare("SELECT DISTINCT startCollege FROM Distances");
+    if(!query->exec())
+    {
+        qDebug() << "tripPlanner initializeList query failed";
+
+       }
+
+    else
+    {
+        for(int i = 0; i < checkBoxVector.size()-(12-(stops+1)+1); i++)
+        {
+            checkBoxVector[i]->setCheckState(Qt::CheckState::Checked);
+
+        }
+        while(query->next())
+        {
+
+            if(checkBoxVector[i]->checkState() == Qt::CheckState::Checked)
+           {
+               QString temp = query->value("startCollege").toString();
+               selectedColleges << temp;
+               qDebug()<< temp << endl;
+
+           }
+           i++;
+          }
+    }
 
 
+}
+
+}
 
 

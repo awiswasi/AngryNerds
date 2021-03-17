@@ -44,16 +44,15 @@ public:
 
     void updateCombo();
 
+void prePlanned();
 
 private slots:
 
-    void ChecboxChanged();
+    void CheckboxChanged();
 
 
     void onPlanClick();
 
-
-    void onDisplayClick();
     void onStartClick();
 
 private:
