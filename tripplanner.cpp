@@ -191,7 +191,7 @@ void tripPlanner::onPlanClick()
             distanceTo << 0; // adds 0 for distance to next college at last college
             if(startingCollege =="University of California, Irvine (UCI)" && type =="auto")
             {
-            for(int index = 0; index < plannedColleges.size()-(10-(stops+1)+1); index++)
+            for(int index = 0; index < plannedColleges.size()-(12-(stops+1)+1); index++)
             {
                 myDb.addTrip(tripID, plannedColleges[index], index, distanceTo[index]); // uploads trip to DB
             }
@@ -361,7 +361,7 @@ void tripPlanner::prePlanned()
     int stops;
     stops= ui->spinBox->value();
 
-if(stops>10)
+if(stops>12)
 {
      QMessageBox::information(this,"title","must not be bigger than 10");
 
